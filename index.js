@@ -6,7 +6,7 @@ app.get('/',  (req, res) => {
 })
 
 app.get('/api/courses/',  (req, res) => {
-    res.send('Course List')
+    res.send('Course List Display')
 })
 
 app.listen(3300, () => console.log('Listening on port 3300...'))
