@@ -9,8 +9,9 @@ app.get('/api/courses/',  (req, res) => {
     res.send('Course List Display')
 })
 
-app.get('/api/courses/:id', (req, res) => {
-    res.send('id is ' + req.params.id)
+app.get('/api/courses/:id/:name', (req, res) => {
+    // res.send(req.params)
+    res.send(req.query)
 })
 
 // export PORT=3400
