@@ -25,10 +25,19 @@ app.get('/api/courses/:id/', (req, res) => {
 })
 
 app.post('/api/courses', (req, res) => {
-    if(!req.body.name || req.body.name.length < 3){
-        res.status(400).send('Name not valid')
+    const schema = Joi.object({
+        name: Joi.string().min(3).required()
+    })
+    const { error, value } = schema.validate({name:req.body.name})
+
+    if(error){
+        console.log(error);
+        // res.status(400).send(JSON.stringify(error))
+        res.status(400).send(error.details[0].message)
         return
     }
+
+    console.log(value);
     const course = {id: courses.length + 1, name: req.body.name }
     courses.push(course)
     res.send(course)
