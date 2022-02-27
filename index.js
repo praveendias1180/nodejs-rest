@@ -16,7 +16,9 @@ app.get('/api/courses/',  (req, res) => {
 })
 
 app.get('/api/courses/:id/', (req, res) => {
-    res.send(courses[req.params.id])
+    // res.send(courses[req.params.id])
+    const course = courses.find(c => c.id = parseInt(req.params.id))
+    res.send(course)
 })
 
 // export PORT=3400
