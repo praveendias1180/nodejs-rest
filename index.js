@@ -9,4 +9,5 @@ app.get('/api/courses/',  (req, res) => {
     res.send('Course List Display')
 })
 
-app.listen(3300, () => console.log('Listening on port 3300...'))
+const port = process.env.PORT || 3300
+app.listen(port, () => console.log(`Listening on port ${port}...`))
