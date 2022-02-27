@@ -11,3 +11,9 @@ A Refresher Repository
 # NODEMON
 
 ![Node Mon](nodemon.png)
+
+# JOI
+
+https://joi.dev/
+
+![Joi](joi.png)
