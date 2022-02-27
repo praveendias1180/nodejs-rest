@@ -2,8 +2,11 @@ const express = require('express')
 const app = express()
 
 app.get('/',  (req, res) => {
-    // console.log(req)
     res.send('Hello World')
 })
 
-app.listen(3300)
+app.get('/api/courses/',  (req, res) => {
+    res.send('Course List')
+})
+
+app.listen(3300, () => console.log('Listening on port 3300...'))
